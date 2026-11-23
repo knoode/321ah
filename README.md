@@ -15,5 +15,5 @@ $ ./build.sh
 
 ---
 <p align="center">
-    <img width="300" height="200" src="./img/blush.jpg">
+    <img width="200" height="400" src="./img/blush.jpg">
 </p>
