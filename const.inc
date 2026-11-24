@@ -14,8 +14,3 @@ timespec:
     tv_sec dq 0
     tv_nsec dq 500000000  ; 600 ms
 
-player db "/usr/bin/aplay", 0
-player_arg db "-q", 0
-player_file db "sound/ahh.wav", 0
-
-player_argv dq player, player_arg, player_file, 0

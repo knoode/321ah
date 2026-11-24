@@ -1,8 +1,10 @@
-    ; hello.asm
+; hello.asm
 
-    ; TODO: Incbin the .wav file
+; TODO: Incbin the .wav file
+; TODO: Manual parsing and playing .wav file
 
 %include "const.inc"
+
 
 section .data
     end_str db "...", 0x0a
@@ -18,6 +20,7 @@ section .text
     extern digit_to_code
     extern print_char
     extern print_str
+    extern sound_effect
     extern exit
 
 _start:
@@ -49,11 +52,8 @@ number_loop:
     dec r10
     jmp number_loop
 play_ahh:
-    mov rax, SYS_EXECVE
-    mov rdi, player
-    mov rsi, player_argv
-    mov rdx, [player_envp_ptr]
-    syscall
+    mov rdi, [player_envp_ptr]
+    call sound_effect
 
     xor rdi, rdi
     call exit

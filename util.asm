@@ -1,4 +1,4 @@
-    ; util.asm
+; util.asm
 
 %include "const.inc"
 
