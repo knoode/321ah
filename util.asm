@@ -2,6 +2,7 @@
 
 %include "const.inc"
 
+
 section .text
     global exit
     global print_char
@@ -51,13 +52,13 @@ digit_to_code:
     mov rbp, rsp
 
     cmp rdi, 9
-    jbe is_digit
+    jbe .is_digit
 
     ; return -1
     mov rax, -1
     pop rbp
     ret
-is_digit:
+.is_digit:
     add rdi, ZERO_ASCII
     mov rax, rdi
 
